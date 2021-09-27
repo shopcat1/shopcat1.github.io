@@ -546,7 +546,7 @@ const santaSleigh = {
 const winimg = [];
 for(let i = 1 ; i <= 68; i++){
 	let curframe = new Image();
-	curframe.src = './img/WINNER/WINNER_('+i+').png';
+	curframe.src = './img/WINNER/WINNER_ ('+i+').png';
 	winimg.push(curframe);
 }
 const win = {
