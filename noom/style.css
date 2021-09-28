@@ -1,0 +1,63 @@
+html{
+	background-color: #3f4147;
+}
+
+button {
+display:inline-block;
+padding:0.3em 1.2em;
+margin:0.5em 0.5em 0.5em 0;
+border:0.2em solid rgba(255,255,255,0);
+border-radius:2em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#00464a;
+text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+text-align:center;
+transition: all 0.2s;
+font-size: 2em;
+}
+
+
+button:hover{
+border-color: rgba(255,255,255,1);
+}
+@media all and (max-width:30em){
+a.button4{
+display:block;
+margin:0.2em auto;
+}
+}
+
+#tarocco{
+	background-color: rgb(255, 45, 25);
+}
+
+#salmon{
+	background-color: rgb(240,   100,   50);
+}
+
+#blossom{
+	background-color: rgb(220,   60,  140);
+}
+
+#conch{
+	background-color: rgb(245,  125, 136);
+}
+
+#sprout{
+	background-color: rgb(205, 255, 40);
+}
+
+#mint{
+	background-color: rgb(200, 240, 70);
+}
+
+#stream{
+	background-color: rgb(60, 240, 150);
+}
+
+#sky{
+	background-color: rgb(150,255, 190);
+}
