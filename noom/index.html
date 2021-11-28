@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 
   $("#on").click(function(){
-    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=1cf158060ec1b7c46ad748774002ef19ae1db657",
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/dmx?access_token=1cf158060ec1b7c46ad748774002ef19ae1db657",
     {
       arg: "255",
       
@@ -40,7 +40,17 @@ $(document).ready(function(){
     });
   });
 
-
+  $("#tarocco").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/dmx?access_token=1cf158060ec1b7c46ad748774002ef19ae1db657",
+    {
+      arg: "255",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+<!--
 
   $("#tarocco").click(function(){
     $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=1cf158060ec1b7c46ad748774002ef19ae1db657",
@@ -52,6 +62,7 @@ $(document).ready(function(){
       console.log("Data: " + data + "\nStatus: " + status);
     });
   });
+  -->
 
   $("#salmon").click(function(){
     $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=1cf158060ec1b7c46ad748774002ef19ae1db657",
