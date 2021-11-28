@@ -29,6 +29,16 @@ $(document).ready(function(){
         //  colorFade( 150,255, 190, 1);//sky
 
 
+  $("#on").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=1cf158060ec1b7c46ad748774002ef19ae1db657",
+    {
+      arg: "255",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
 
 
 
@@ -196,6 +206,8 @@ sky
   <button id="sky">sky</button>
   <button id="white">white</button>
   <button id="Off">Off</button>
+  
+  <button id="on">on</button>
 
   </center>
 </div>
