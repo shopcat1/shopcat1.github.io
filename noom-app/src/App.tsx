@@ -46,7 +46,7 @@ const [selectedButton, setSelectedButton] = React.useState<string|undefined>(und
 const [segments, setSegments] = React.useState<SegmentInterface[]|undefined>(undefined)
 const [loadingStatus, setLoadingStatus] = React.useState<LoadingStatus>(LoadingStatus.Loading)
 React.useEffect(()=> {
-  fetch("/buttons.json")
+  fetch("./buttons.json")
   .then(r => r.json())
   .then(segs => {
     setSegments(segs)
