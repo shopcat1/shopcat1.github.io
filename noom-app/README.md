@@ -9,6 +9,9 @@ within the file buttons.json, all changes can be made. The built version of the 
 Note: if you are planing on changing it in the live build, make sure to also change it in the public folder, otherwise on subsequent builds, you will lose the changes. 
 
 
+## Rebuilding 
+If you plan to rebuild the project, be sure to run `yarn install` in the root of the project. 
+
 ## Available Scripts
 
 In the project directory, you can run:
