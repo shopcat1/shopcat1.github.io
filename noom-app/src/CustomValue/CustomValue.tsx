@@ -33,7 +33,7 @@ export const CustomValue = (props:Props) => {
     }
     const setClicked = () => {
         setSelectedButton("CUSTOM") 
-        Controller.createRequest(`${values.r}, ${values.g}, ${values.b}, ${values.w}`)
+        Controller.createRequest(`${values.r},${values.g},${values.b},${values.w}`)
     }
 
     return <div className={className} style={style} >
