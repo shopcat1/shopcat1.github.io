@@ -1,0 +1,40 @@
+.CustomValue {
+    background-color: #727272;
+    padding: 20px 0;
+    border-radius: 20px;
+}
+.CustomValue h3 {
+    font-size: 18px;
+    color: #fff;
+    padding: 0 10px;
+    margin: 0;
+}
+.CustomValue .fields { 
+    display: flex;
+    flex-direction: row;
+}
+.CustomValue .fields input {
+    padding: 20px;
+    font-size: 24px;
+    max-width: 100px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.CustomValue .setButton {
+    margin-left: 10px;
+    padding: 5px 20px;
+    font-size: 28px;
+    background-color: #9b9b9b;
+    border-radius: 10px;
+    border: 2px solid #000;
+    float: left;
+    cursor: pointer;
+}
+.CustomValue .setButton:hover {
+
+    background-color: #efefef;
+    }
+.CustomValue.selected .setButton {
+
+background-color: #fff;
+}

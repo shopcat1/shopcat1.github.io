@@ -1,0 +1,28 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;  
+}
+
+.appWrapper {
+  position: relative;
+  padding: 50px 20px 0 20px;
+  max-width: 900px;
+  width: 100%;
+}
+.offButtonWrapper {
+  margin-bottom: -90px;
+  height: 200px;
+  
+
+}
+.customRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+}
+

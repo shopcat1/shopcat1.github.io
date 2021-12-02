@@ -1,0 +1,36 @@
+.donut-complex text {
+	font-family: 'Average Sans', sans-serif;
+		font-size: 0.4rem;
+	font-weight: bold;
+	opacity: 0;
+	transition: opacity 0.35s ease-in-out 1s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: #000;
+	fill: #000;
+	cursor: pointer;
+
+}
+
+.donut-complex circle.segmentCircle {
+	fill: none;
+	cursor: pointer;
+	/* transition: stroke-dashoffset 1s ease-in-out; */
+}
+.donut-complex .segmentGroup:hover circle.segmentCircle {
+	stroke-width: 50px;
+}
+.donut-complex circle.centerCircle {
+	fill: #000;
+	/* transition: stroke-dashoffset 1s ease-in-out; */
+}
+
+.donut-complex:not(.donut-complex--loaded) circle {
+	stroke-dashoffset: 0;
+}
+
+.donut-complex--loaded text {
+	opacity: 1;
+}
