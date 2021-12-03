@@ -67,18 +67,23 @@ if (loadingStatus === LoadingStatus.Loading) {
 if (loadingStatus === LoadingStatus.Error) {
   return     <div className="App">There was an error loading the buttons.</div>
 }
+
+const padding = 20;
+const maxWidth = 900;
+
+const computedWidth = width > maxWidth-padding ? maxWidth : (width - (padding*2))
   return (
     <div className="App">
         <div className="appWrapper">
-            <div className="offButtonWrapper">
+            {/* <div className="offButtonWrapper" style={{width:computedWidth+"px", height:computedWidth/4+"px"}}>
         <OffButton 
-                    width={width}
+                    width={computedWidth/4}
                     selectedButton={selectedButton}
                     setSelectedButton={setSelectedButton}
                     />
-                    </div>
+                    </div> */}
         <ComplexDonut
-		width={width > 680 ? 700 : (width - 40)}
+		width={computedWidth}
 		radius={80}
 		segments={segments}
 		thickness={40}

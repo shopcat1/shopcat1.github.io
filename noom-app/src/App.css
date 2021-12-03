@@ -10,12 +10,8 @@
   max-width: 900px;
   width: 100%;
 }
-.offButtonWrapper {
-  margin-bottom: -90px;
-  height: 200px;
-  
 
-}
+
 .customRow {
   display: flex;
   flex-direction: column;

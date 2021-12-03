@@ -67,13 +67,14 @@ const ComplexDonut = (props:ComplexDonutProps) => {
 
 	const getTextCoordinates = (value, angleOffset) => {
 		const { radius, segments } = props;
+		
 		const total = getTotal(segments);
 		const angle = (getPercent(value, total) * 360) / 2 + angleOffset;
 		const radians = convertDegreesToRadians(angle);
-
+		const textRadius = radius * 1.03;
 		return {
-			x: radius * Math.cos(radians) + size / 2,
-			y: radius * Math.sin(radians) + size / 2
+			x: textRadius * Math.cos(radians) + size / 2,
+			y: textRadius * Math.sin(radians) + size / 2
 		};
 	};
 
@@ -135,11 +136,19 @@ const ComplexDonut = (props:ComplexDonutProps) => {
 
 	const wrapperSize = size + 12; 
 
+	const offX = size * 1.09;
+	const offY =  0 - (size * 0.09)
 
+
+	const offClicked = () => {
+		setSelectedButton("OFF")
+        Controller.createRequest("0,0,0,0")
+
+	}
 
 	return (
 		<div className={`donut-complex${isLoaded ? ' donut-complex--loaded ' : ' '}${className}`}>
-			<svg scale={width/size} height={width } width={width} viewBox={`-6 -6  ${wrapperSize} ${wrapperSize}`}>
+			<svg scale={width/size} height={width } width={width} viewBox={`-6 -30  ${wrapperSize * 1.3} ${wrapperSize}`}>
 				
 				{segments.map((segment:any, i) => (
 				<DonutWedge 
@@ -163,12 +172,39 @@ const ComplexDonut = (props:ComplexDonutProps) => {
                 	<g key={"Center"}>
 						<circle
                             className="centerCircle"
-							r={radius - thickness/2}
+							r={radius * 0.84}
 							cx={halfSize}
 							cy={halfSize}
-                            fill={"#00000"}
+                            fill={"#efefef"}
 							z={1000}
 						/>
+					</g>
+
+
+					<g key={"OffButton"} className="offButtonWrapper" onClick={offClicked}>
+						<circle
+                            className="OffButton"
+							r={radius * 0.55}
+							cx={offX}
+							cy={ offY}
+                            fill={"#FFF"}
+							z={1000}
+						/>
+						<circle
+                            className="OffButtonInner"
+							r={radius * 0.21}
+							cx={offX}
+							cy={offY}
+                            fill={"#000"}
+							z={1000}
+						/>
+							<text
+								x={offX}
+								y={offY}
+							dy="3px"
+							className="whiteText"
+							textAnchor="middle"
+						>OFF</text>
 					</g>
 			</svg>
 		</div>

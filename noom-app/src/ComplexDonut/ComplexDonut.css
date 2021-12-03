@@ -1,6 +1,6 @@
 .donut-complex text {
 	font-family: 'Average Sans', sans-serif;
-		font-size: 0.4rem;
+		font-size: 0.35rem;
 	font-weight: bold;
 	opacity: 0;
 	transition: opacity 0.35s ease-in-out 1s;
@@ -12,6 +12,10 @@
 	fill: #000;
 	cursor: pointer;
 
+}
+.donut-complex text.whiteText {
+	color: #fff;
+	fill: #fff;
 }
 
 .donut-complex circle.segmentCircle {
@@ -33,4 +37,10 @@
 
 .donut-complex--loaded text {
 	opacity: 1;
+}
+.OffButton,
+.OffButtonInner,
+.whiteText, 
+.offButtonWrapper {
+	cursor: pointer;
 }
