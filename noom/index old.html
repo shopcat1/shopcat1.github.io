@@ -1,0 +1,205 @@
+<!-- Replace your-device-ID-goes-here with your actual device ID
+and replace your-access-token-goes-here with your actual access token-->
+<!DOCTYPE>
+<html>
+  <head>
+<link href="style.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script>
+
+$(document).ready(function(){
+  
+
+
+        // colorWipe(strip.Color( 255, 45, 25)     , 50); //tarocco
+        //  colorFade(255, 45, 25, 1);//tarocco
+        //  colorWipe(strip.Color(240,   100,   50)     , 50);//salmon
+        //  colorFade(240,   100,   50, 1);//salmon
+        //  colorWipe(strip.Color(  220,   60,  140)     , 50);//blossom 
+        //  colorFade(220,   60,  140, 1);//blossom
+        //  colorWipe(strip.Color( 245,  125, 136), 50);//conch
+        //  colorFade(245,  125, 136, 1);//conch
+        //  colorWipe(strip.Color( 205, 255, 40)     , 50); //sprout
+        //  colorFade(205, 255, 40, 1);//sprout
+        //  colorWipe(strip.Color( 200, 240, 70)     , 50); //mint
+        //  colorFade(200, 240, 70, 1);//mint
+        //  colorWipe(strip.Color(60, 240, 150)     , 50); //stream
+        //  colorFade(60, 240, 150, 1);//stream
+        //  colorWipe(strip.Color( 150,255, 190)     , 50); //sky
+        //  colorFade( 150,255, 190, 1);//sky
+
+
+  
+
+  
+
+  $("#tarocco").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "255, 45, 25,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#salmon").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "240,   100,   50,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#blossom").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "220,   60,  140,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+
+  
+
+
+  $("#conch").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "245,  125, 136,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#sprout").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "205, 255, 40,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#mint").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "200, 240, 70,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#stream").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "60, 240, 150,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#sky").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "150,255, 190",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+  $("#white").click(function(){
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "0,0,0,124",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+
+
+
+
+  $("#Off").click(function(){
+    
+    // 250050000e504b5350313120
+    $.post("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948",
+    {
+      arg: "0,0,0,0",
+      
+    },
+    function(data,status){
+      console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+
+
+
+});
+</script>
+
+    </head>
+  <body>
+  <center>
+  <br>
+  <br>
+  <br>
+  <!-- <form action="https://api.particle.io/v1/devices/37002c000747373336323230/led?access_token=837a518263b45941c837a9e45f82835107cc5948" method="POST">
+    Tell your device what to do!<br>
+    <br>
+    <input type="radio" name="arg" value="red">Red.
+    <br>
+    <input type="radio" name="arg" value="green">Green.
+    <br>
+    <input type="radio" name="arg" value="blue">Blue.
+    <br>
+    <br>
+    <input type="submit" value="Do it!">
+  </form> -->
+
+<!-- tarocco
+salmon
+blossom
+conch
+sprout
+mint
+stream
+sky
+ -->
+<div id="container" style="margin: 14em 0 0 0;">
+  <button id="tarocco">tarocco</button>
+  <button id="salmon">salmon</button>
+  <button id="blossom">blossom</button>
+ <button id="conch">conch</button>
+  <button id="sprout">sprout</button>
+  <button id="mint">mint</button>
+  <button id="stream">stream</button>
+  <button id="sky">sky</button>
+  <button id="white">white</button>
+  <button id="Off">Off</button>
+
+
+  </center>
+</div>
+  </body>
+</html>
