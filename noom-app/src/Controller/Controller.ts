@@ -1,4 +1,6 @@
 export class Controller {
+    static whiteBrightness = 128;
+
     static createRequest(arg) {
       let obj = {"arg":arg}
       var formBody:any = [];
@@ -8,7 +10,8 @@ export class Controller {
         formBody.push(encodedKey + "=" + encodedValue);
       }
       formBody = formBody.join("&");
-
+      // console.log("About to send", formBody,obj);
+      // return; 
 
       fetch("https://api.particle.io/v1/devices/e00fce68873438d598031f19/led?access_token=837a518263b45941c837a9e45f82835107cc5948", 
         {

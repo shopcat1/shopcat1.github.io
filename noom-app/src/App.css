@@ -6,7 +6,7 @@
 
 .appWrapper {
   position: relative;
-  padding: 50px 20px 0 20px;
+  padding: 50px 20px 0 80px;
   max-width: 900px;
   width: 100%;
 }
@@ -22,3 +22,33 @@
   margin-top: 20px;
 }
 
+.sliderContainer{ 
+   width: 30px;
+   height: 420px;
+  position: absolute; 
+  left: 40px; 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.sliderContainer span {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+}
+.sliderContainer .rc-slider-vertical .rc-slider-handle  {
+  margin-left: -15px;
+}
+.sliderContainer .rc-slider-handle {
+  width: 34px;
+  height: 34px;
+  border-color: #efefef;
+}
+.sliderContainer .rc-slider-vertical .rc-slider-rail {
+  height: 100%;
+  width: 8px;
+  margin-left: -2px;
+}

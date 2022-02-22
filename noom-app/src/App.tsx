@@ -1,3 +1,4 @@
+import Slider from 'rc-slider/lib/Slider';
 import React from 'react';
 
 
@@ -5,7 +6,8 @@ import './App.css';
 import ComplexDonut from './ComplexDonut/ComplexDonut';
 import { CustomValue } from './CustomValue/CustomValue';
 import { SegmentInterface } from './Interfaces/SegmentInterface';
-import { OffButton } from './OffButton/OffButton';
+import {SliderContainer} from './SliderContainer/SliderContainer';
+// import { OffButton } from './OffButton/OffButton';
 
 
 
@@ -45,6 +47,9 @@ function App() {
 const [selectedButton, setSelectedButton] = React.useState<string|undefined>(undefined)
 const [segments, setSegments] = React.useState<SegmentInterface[]|undefined>(undefined)
 const [loadingStatus, setLoadingStatus] = React.useState<LoadingStatus>(LoadingStatus.Loading)
+
+const [whiteBrightness, setWhiteBrightness] = React.useState(255)
+
 React.useEffect(()=> {
   fetch("./buttons.json")
   .then(r => r.json())
@@ -72,6 +77,8 @@ const padding = 20;
 const maxWidth = 900;
 
 const computedWidth = width > maxWidth-padding ? maxWidth : (width - (padding*2))
+
+
   return (
     <div className="App">
         <div className="appWrapper">
@@ -90,6 +97,7 @@ const computedWidth = width > maxWidth-padding ? maxWidth : (width - (padding*2)
 		startAngle={-135}
         selectedButton={selectedButton}
         setSelectedButton={setSelectedButton}
+        whiteBrightness={whiteBrightness}
 	/>
  
         <div className="customRow">
@@ -99,6 +107,9 @@ const computedWidth = width > maxWidth-padding ? maxWidth : (width - (padding*2)
                 setSelectedButton={setSelectedButton}
         />
         </div>
+                  <SliderContainer width={computedWidth}
+ whiteBrightness={whiteBrightness} setWhiteBrightness={setWhiteBrightness} selectedButton={selectedButton}/>
+
     </div>
     </div>
   );

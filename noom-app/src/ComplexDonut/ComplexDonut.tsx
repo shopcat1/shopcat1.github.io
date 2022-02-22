@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Controller } from '../Controller/Controller';
 import { SegmentInterface } from '../Interfaces/SegmentInterface';
 // import PropTypes from 'prop-types';
@@ -25,15 +25,25 @@ interface DonutWedgeProps {
 	getStrokeDashOffset:any 
 	textProps:any 
 	selectedButton?:string 
+	whiteBrightness: number
+
 	setSelectedButton:(buttonLabel:string)=>void
 }
 const DonutWedge = (props:DonutWedgeProps) => {
-	const {i, circleProps, radius, halfSize,segment,thickness,circumference, getStrokeDashOffset, textProps,selectedButton,setSelectedButton } = props; 
-	const onClick = () => {
+	const {i, circleProps, radius, halfSize,segment,thickness,circumference, getStrokeDashOffset, textProps,selectedButton,setSelectedButton , whiteBrightness} = props; 
+	const onClick = useCallback( () => {
 		setSelectedButton(segment.label)
-		Controller.createRequest(segment.arg)
+		if (segment.label === "WHITE") {
+			const arg  = `0,0,0,${whiteBrightness}`
+			Controller.createRequest(arg)
 
-	}
+		} else {
+			Controller.createRequest(segment.arg)
+
+		}
+
+	}, [segment.arg, segment.label, setSelectedButton, whiteBrightness]) 
+	
 	return <g key={i} className="segmentGroup" onClick={onClick}>
 	<circle
 		{...circleProps}
@@ -163,6 +173,7 @@ const ComplexDonut = (props:ComplexDonutProps) => {
 					getStrokeDashOffset={getStrokeDashOffset} 
 					textProps={textProps} 
 					selectedButton={selectedButton}
+					whiteBrightness={props.whiteBrightness}
 					setSelectedButton={setSelectedButton}
 				/>
 				
@@ -220,6 +231,8 @@ interface ComplexDonutProps  {
 	className: string,
 	circleProps: object,
 	textProps: object
+	whiteBrightness: number
+
 	selectedButton?:string 
 	setSelectedButton:(buttonLabel:string)=>void
 };
